@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { prisma } from "../../db/client";
+import { prisma } from "../../../db/client";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   });
 
   if (!data) {
-    res.status(404).send(JSON.stringify({ message: "slug dont found" }));
+    res.status(404).json({ message: "slug dont found" });
     return;
   }
 
