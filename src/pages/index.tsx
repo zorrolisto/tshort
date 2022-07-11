@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const NUMBERS_RANDOM = 15;
@@ -90,13 +91,23 @@ const Home: NextPage = () => {
                 className="w-1/12 bg-indigo-600 hover:bg-indigo-500 flex justify-center rounded-lg py-3 shadow-lg"
                 onClick={generateCustomSlug}
               >
-                <img src="retry.svg" className="w-9 h-8" />
+                <Image
+                  src="/retry.svg"
+                  alt="retry icon"
+                  width={36}
+                  height={32}
+                />
               </button>
               <button
                 className="w-1/12 bg-indigo-600 hover:bg-indigo-500 flex justify-center rounded-lg py-3 shadow-lg"
                 onClick={copyToClipboard}
               >
-                <img src="clipboard.svg" className="w-9 h-8" />
+                <Image
+                  src="/clipboard.svg"
+                  alt="clipboard icon"
+                  width={36}
+                  height={32}
+                />
               </button>
             </div>
           )}
